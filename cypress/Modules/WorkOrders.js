@@ -39,6 +39,8 @@ class WorkOrders {
         cy.get('#btnReset').click();
         cy.wait(2000);
         cy.wait('@overviewLoad');
+        cy.get("#AllActivity").click();
+        cy.wait('@overviewLoad');
         cy.get('#site').select("93975");
         // Wait for the data to load (adjust the time according to your application)
         cy.wait('@overviewLoad');

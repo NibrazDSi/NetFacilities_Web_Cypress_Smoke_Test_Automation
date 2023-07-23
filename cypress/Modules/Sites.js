@@ -103,7 +103,9 @@ class Sites {
         // cy.get('#btnDelete').click();
     }
     addNewSubsite() {
+        cy.intercept("POST","/Bldg/Search").as("subsiteFieldLoad");
         cy.get('#chkMultiSite').click();
+        cy.wait("@subsiteFieldLoad");
         cy.wait(500);
         cy.get("#btnNewSiteBldg").click();
         this.subsite();
@@ -119,7 +121,9 @@ class Sites {
     // }
     subsite() {
         let subsiteName = faker.address.buildingNumber() + " " + faker.address.streetName();
+        cy.wait(1000);
         cy.get('[name="BldgName"]').clear().type(subsiteName);
+        cy.wait(1000);
         let street = faker.address.streetAddress();
         cy.get('[name=Address]').clear().type(street);
     }
