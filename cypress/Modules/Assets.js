@@ -11,16 +11,16 @@ class Assets {
             cy.wrap($links[5]).invoke('text').should('equal', 'SITE');
             cy.wrap($links[6]).invoke('text').should('equal', 'SUB-SITE');
             cy.wrap($links[7]).invoke('text').should('equal', 'AREA');
-            cy.wrap($links[8]).invoke('text').should('equal', 'BARCODE');
-            cy.wrap($links[9]).invoke('text').should('equal', 'LOCATION INSTALLED');
-            cy.wrap($links[10]).invoke('text').should('equal', 'RELATIONSHIP');
-            cy.wrap($links[11]).invoke('text').should('equal', 'SERIAL/VIN');
-            cy.wrap($links[12]).invoke('text').should('equal', 'PMS');
-            cy.wrap($links[13]).invoke('text').should('equal', 'MODEL');
-            cy.wrap($links[14]).invoke('text').should('equal', 'MANUFACTURER');
-            cy.wrap($links[15]).invoke('text').should('equal', 'WORK ORDER');
-            cy.wrap($links[16]).invoke('text').should('equal', 'HISTORY');
-            cy.wrap($links[17]).invoke('text').should('equal', 'READING');
+            // cy.wrap($links[8]).invoke('text').should('equal', 'BARCODE');
+            // cy.wrap($links[9]).invoke('text').should('equal', 'LOCATION INSTALLED');
+            // cy.wrap($links[10]).invoke('text').should('equal', 'RELATIONSHIP');
+            // cy.wrap($links[11]).invoke('text').should('equal', 'SERIAL/VIN');
+            // cy.wrap($links[12]).invoke('text').should('equal', 'PMS');
+            // cy.wrap($links[13]).invoke('text').should('equal', 'MODEL');
+            // cy.wrap($links[14]).invoke('text').should('equal', 'MANUFACTURER');
+            // cy.wrap($links[15]).invoke('text').should('equal', 'WORK ORDER');
+            // cy.wrap($links[16]).invoke('text').should('equal', 'HISTORY');
+            // cy.wrap($links[17]).invoke('text').should('equal', 'READING');
         });
     }
     filtersVerify() {

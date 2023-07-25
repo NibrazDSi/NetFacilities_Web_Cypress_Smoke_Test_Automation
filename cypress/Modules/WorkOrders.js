@@ -96,13 +96,17 @@ class WorkOrders {
     createNewWorkOrder() {
         cy.wait(1500);
         cy.get("a[href='/workorder/details']").eq(1).click();
-        cy.wait(1000);
+        cy.wait(3500);
         cy.get(".k-select").then(($dropdownSelect) => {
             //selecting the site and subsite.
+            cy.intercept("POST","/Suite/GetSiteAreasForWorkOrder").as('getSiteAreas')
+            cy.intercept("POST","/Preset/GetListByType").as('getList');
             cy.wrap($dropdownSelect[0]).invoke('show').click().type("{downarrow}{enter}");
-            cy.wait(1500);
+            cy.wait("@getSiteAreas");
+            cy.wait("@getList")
+            cy.wait(2700);
             cy.wrap($dropdownSelect[1]).invoke('show').click().type("{downarrow}{enter}");
-            cy.wait(1500);
+            cy.wait(2700);
         })
         //Selecting time.
         const randomNumber = Cypress._.random(0, 30);
@@ -162,7 +166,7 @@ class WorkOrders {
         // wait for the url to load.
         cy.url().should('include', '/workorder/details');
         cy.get("#aAssetWin").click();
-        cy.wait(1000);
+        cy.wait(2500);
         cy.get('span[class="k-input"]',{force:true}).eq(3).click().type("{downarrow}{enter}");
         cy.get('#btnContinue').click();
         // Validate that an asset has been attached and a label came.

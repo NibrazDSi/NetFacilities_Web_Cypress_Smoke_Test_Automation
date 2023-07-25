@@ -22,6 +22,7 @@ module.exports = defineConfig({
       ]
       return config;
     },
-    videoUploadOnPasses:false
+    videoUploadOnPasses:false,
+    videoCompression:false
   },
 });
